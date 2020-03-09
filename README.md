@@ -6,7 +6,7 @@ Use Raspberry Pi to connect via usb to Arduino with Grove Shield and
 [Grove GPS sensor](http://wiki.seeedstudio.com/Grove-GPS/)
 
 ![arduino uno and grove hat](images/uno-grove-sheild.png)
-***Arduino Uno with Grove GPS sensor attached***
+***Arduino Uno with Grove - Temerature/Barometer & GPS sensor attached***
 
 
 Grove GPS writes via SoftSerial lib
