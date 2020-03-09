@@ -1,3 +1,4 @@
+import pprint
 import serial
 import os 
 import pynmea2
@@ -85,10 +86,12 @@ while True:
 		break
 	
 
-print("about to close")
+print("about to close serial read")
 ser.close()
+
+pp = pprint.PrettyPrinter(indent=4)
 ret = parseNMEA(lines)
 #parse(lines)
 print(ret)
 annotated = annotate(ret)
-print(annotated)
+pp.pprint(annotated)
