@@ -1,4 +1,56 @@
 import serial
+import os 
+import pynmea2
+import requests
+import json
+
+mapquestkey=os.environ.get('MAPQUEST_KEY')
+max=10
+
+def annotate(bag):
+	print(mapquestkey)
+	url = f"http://www.mapquestapi.com/geocoding/v1/reverse?key={mapquestkey}&location={bag['latitude']},{bag['longitude']}&includeRoadMetadata=true&includeNearestIntersection=true"
+
+
+	print(f"about to call url {url}")
+	try:
+		r = requests.get(url)
+		if(r.status_code == 200):		
+			rdict = r.json()
+			bag['mapquest'] = rdict
+		else:
+			print(r.status_code)
+	except Exception as mapex:
+		print(mapex)
+
+	return bag
+		
+
+
+def parseNMEA(lines):
+	print(f"about to parse {len(lines)}")
+	latitude = None
+	longitude = None
+	altitude = None
+	altitude_units = None
+
+	for l in lines:
+		try:
+			msg = pynmea2.parse(l)
+			longitude = msg.longitude
+			latitude = msg.latitude
+			altitude = msg.altitude
+			altitude_units = msg.altitude_units
+		except pynmea2.nmea.ChecksumError as csex:
+			continue
+
+	if(latitude is not None and longitude is not None and altitude is not None):
+		return {'latitude':latitude, 'longitude':longitude , 'altitude':altitude, 'altitude_units':altitude_units}
+
+	elif(latitude is not None and longitude is not None):
+		return {'latitude':latitude, 'longitude':longitude}
+	else:
+		raise Exception("bah humbug no data found!")
 
 def parse(lines):
 	print("dms")
@@ -20,7 +72,6 @@ print("connected to: " + ser.portstr)
 
 #this will store some lines
 lines = []
-max=10
 counter=0
 
 while True:
@@ -29,8 +80,6 @@ while True:
 	if(ln[0:6]=='$GPGGA'):
 		lines.append(ln)
 		counter = counter + 1
-	else:
-		print(ln)
 
 	if(counter == max):
 		break
@@ -38,5 +87,8 @@ while True:
 
 print("about to close")
 ser.close()
-parse(lines)
-
+ret = parseNMEA(lines)
+#parse(lines)
+print(ret)
+annotated = annotate(ret)
+print(annotated)
