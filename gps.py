@@ -53,19 +53,7 @@ def parseNMEA(lines):
 	else:
 		raise Exception("bah humbug no data found!")
 
-def parse(lines):
-	print("dms")
-	#https://gps-coordinates.org/
-	for l in lines:
-		la = l.split(',')
-		long = la[2]
-		longC = la[3]
-		lat = la[4]
-		latC = la[5]
-		latDegrees = int(str(float(long)/100).split('.')[0])
-		latMinutes = int(str(float(long)/100).split('.')[1][:2])
-		inf = {'latDegrees':latDegrees, 'latMinutes':latMinutes, 'lat':long, 'latCardinal': longC, 'long': lat, 'longCardinal': latC}
-		print(inf)
+
 
 ser = serial.Serial( port='/dev/ttyACM0', baudrate=9600)
 
@@ -91,7 +79,7 @@ ser.close()
 
 pp = pprint.PrettyPrinter(indent=4)
 ret = parseNMEA(lines)
-#parse(lines)
+
 print(ret)
 annotated = annotate(ret)
 pp.pprint(annotated)
