@@ -65,3 +65,8 @@ and returns something similar to
 convert grove gps data to meanigful information
 https://github.com/Knio/pynmea2
 
+https://en.wikipedia.org/wiki/NMEA_0183
+
+https://developer.mapquest.com/devblog/
+
+
