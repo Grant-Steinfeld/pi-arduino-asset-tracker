@@ -8,14 +8,27 @@ Use Raspberry Pi to connect via usb to Arduino with Grove Shield and
 ![arduino uno and grove hat](images/uno-grove-sheild.png)
 ***Arduino Uno with Grove GPS sensor attached***
 
-usb to raspberry pi v2
 
-to get GPS and location information
+Grove GPS writes via SoftSerial lib
 
-to add grab Temp, Humidity and Accelerometer data ...
+```bash
+screen /dev/ttyACM0 9600
+```
+
+![NMEA serial output](images/NMEA-serial-out.png)
+
+The line starting with `$GPCCA` annotated above has the data that provides
+the longitude and latitude and altitude data that is interesting to us.
 
 
-Need to signup for Mapquest Developer account and get an API key
+Arduino talks to pi via usb 
+
+[GPS.py lines 40 to 44](https://github.com/Grant-Steinfeld/pi-arduino-asset-traker/blob/master/gps.py#L40-L44) gets GPS and location information via the python library [pynmea](https://pypi.org/project/pynmea2/)
+
+( $todo: add grab Temp, Humidity and Accelerometer data ... )
+
+
+You will need to signup for Mapquest Developer account and get an API key
 
 ```bash
 export MAPQUEST_KEY=hw26Ajxxxxxxxxxxx
