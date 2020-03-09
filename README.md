@@ -1,8 +1,14 @@
-# pi-arduino asset-tracker
+# Raspberry Pi with arduino 
+## workup for an asset-tracker
 
 
 Use Raspberry Pi to connect via usb to Arduino with Grove Shield and 
 [Grove GPS sensor](http://wiki.seeedstudio.com/Grove-GPS/)
+
+![arduino uno and grove hat](images/uno-grove-sheild.png)
+***Arduino Uno with Grove GPS sensor attached***
+
+usb to raspberry pi v2
 
 to get GPS and location information
 
@@ -19,7 +25,7 @@ in `python3 code gps.py` it will call
 
 Mapquest get url to
 
-http://www.mapquestapi.com/geocoding/v1/reverse?key=MAPQUESTKEY&location=40.72817333333333,-73.98259166666666&includeRoadMetadata=true&includeNearestIntersection=true
+`http://www.mapquestapi.com/geocoding/v1/reverse?key=MAPQUESTKEY&location=40.72817333333333,-73.98259166666666&includeRoadMetadata=true&includeNearestIntersection=true`
 
 
 and returns something similar to
