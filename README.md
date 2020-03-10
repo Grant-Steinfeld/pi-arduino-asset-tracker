@@ -17,7 +17,7 @@ screen /dev/ttyACM0 9600
 
 ![NMEA serial output](images/NMEA-serial-out.png)
 
-The line starting with `$GPCCA` annotated above has the data that provides
+The line starting with `$GPGGA` annotated above has the [NMEA](https://www.nmea.org/content/STANDARDS/NMEA_0183_Standard) data that provides
 the longitude and latitude and altitude data that is interesting to us.
 
 
@@ -64,6 +64,11 @@ and returns something similar to
 
 convert grove gps data to meanigful information
 https://github.com/Knio/pynmea2
+
+National Marine Electronics (NMEA)
+Standard
+
+https://www.nmea.org/content/STANDARDS/NMEA_0183_Standard
 
 https://en.wikipedia.org/wiki/NMEA_0183
 
