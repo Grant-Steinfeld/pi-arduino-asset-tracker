@@ -1,0 +1,55 @@
+{   'altitude': 380.7,
+    'altitude_units': 'M',
+    'latitude': 41.471001666666666,
+    'longitude': -74.88480666666666,
+    'mapquest': {   'info': {   'copyright': {   'imageAltText': '© 2020 '
+                                                                 'MapQuest, '
+                                                                 'Inc.',
+                                                 'imageUrl': 'http://api.mqcdn.com/res/mqlogo.gif',
+                                                 'text': '© 2020 MapQuest, '
+                                                         'Inc.'},
+                                'messages': [],
+                                'statuscode': 0},
+                    'options': {   'ignoreLatLngInput': False,
+                                   'maxResults': 1,
+                                   'thumbMaps': True},
+                    'results': [   {   'locations': [   {   'adminArea1': 'US',
+                                                            'adminArea1Type': 'Country',
+                                                            'adminArea3': 'NY',
+                                                            'adminArea3Type': 'State',
+                                                            'adminArea4': 'Sullivan',
+                                                            'adminArea4Type': 'County',
+                                                            'adminArea5': 'Barryville',
+                                                            'adminArea5Type': 'City',
+                                                            'adminArea6': '',
+                                                            'adminArea6Type': 'Neighborhood',
+                                                            'displayLatLng': {   'lat': 41.471706,
+                                                                                 'lng': -74.885096},
+                                                            'dragPoint': False,
+                                                            'geocodeQuality': 'ADDRESS',
+                                                            'geocodeQualityCode': 'L1AAA',
+                                                            'latLng': {   'lat': 41.471706,
+                                                                          'lng': -74.885096},
+                                                            'linkId': '0',
+                                                            'mapUrl': 'http://www.mapquestapi.com/staticmap/v5/map?key=YTuAruqYfPTAUeY0f7pjFiGGbvBohYuQ&type=map&size=225,160&locations=41.47170598233431,-74.88509555546592|marker-sm-50318A-1&scalebar=true&zoom=15&rand=-1065243045',
+                                                            'nearestIntersection': {   'distanceMeters': '109.17606954993944',
+                                                                                       'label': 'Schwab '
+                                                                                                'Rd '
+                                                                                                '& '
+                                                                                                'Haring '
+                                                                                                'Rd',
+                                                                                       'latLng': {   'latitude': 41.471977,
+                                                                                                     'longitude': -74.884153},
+                                                                                       'streetDisplayName': 'Haring '
+                                                                                                            'Rd'},
+                                                            'postalCode': '12719',
+                                                            'roadMetadata': None,
+                                                            'sideOfStreet': 'R',
+                                                            'street': '30 '
+                                                                      'Schwab '
+                                                                      'Rd',
+                                                            'type': 's',
+                                                            'unknownInput': ''}],
+                                       'providedLocation': {   'latLng': {   'lat': 41.471001666666666,
+                                                                             'lng': -74.88480666666666}}}]}}
+
